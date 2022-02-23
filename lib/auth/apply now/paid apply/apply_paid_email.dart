@@ -1,18 +1,19 @@
 import 'package:evs_app/Models/colors.dart';
+import 'package:evs_app/auth/apply%20now/paid%20apply/attach_reciept.dart';
 import 'package:evs_app/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // ignore: camel_case_types
-class Free_Apply_Email extends StatefulWidget {
-  const Free_Apply_Email({Key? key}) : super(key: key);
+class Paid_Apply_Email extends StatefulWidget {
+  const Paid_Apply_Email({Key? key}) : super(key: key);
 
   @override
-  _Free_Apply_EmailState createState() => _Free_Apply_EmailState();
+  _Paid_Apply_EmailState createState() => _Paid_Apply_EmailState();
 }
 
 // ignore: camel_case_types
-class _Free_Apply_EmailState extends State<Free_Apply_Email> {
+class _Paid_Apply_EmailState extends State<Paid_Apply_Email> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -65,29 +66,16 @@ class _Free_Apply_EmailState extends State<Free_Apply_Email> {
                 const SizedBox(
                   height: 100,
                 ),
-                Text(
-                  'Application Status',
-                  style: TextStyle(color: color1, fontSize: 35),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                Column(
                   children: [
                     Text(
-                      'For',
+                      'Check For',
                       style: TextStyle(color: color1, fontSize: 35),
                     ),
-                    const SizedBox(
-                      width: value3,
-                    ),
                     Text(
-                      'EVS',
-                      style: TextStyle(
-                        color: color1,
-                        fontSize: 70,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
+                      'Enrollmemt',
+                      style: TextStyle(color: color1, fontSize: 50),
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -113,7 +101,7 @@ class _Free_Apply_EmailState extends State<Free_Apply_Email> {
                               style: const TextStyle(color: Colors.grey),
                               cursorColor: Colors.grey,
                               decoration: const InputDecoration(
-                                hintText: 'Enter your email... ',
+                                hintText: 'Enter your registration number... ',
                                 hintStyle: TextStyle(color: Colors.grey),
                                 focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.grey)),
@@ -136,7 +124,7 @@ class _Free_Apply_EmailState extends State<Free_Apply_Email> {
                           width: 130,
                           child: ElevatedButton(
                             onPressed: () {
-                              Get.to(() => const Login_Screen());
+                              Get.to(() => const Attch_Reciept());
                             },
                             child: Text(
                               'Submit',

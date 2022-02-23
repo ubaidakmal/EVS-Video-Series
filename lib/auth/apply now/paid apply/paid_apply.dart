@@ -1,5 +1,7 @@
 import 'package:evs_app/Models/colors.dart';
+import 'package:evs_app/auth/apply%20now/thanks_Splash_Screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class Paid_Apply extends StatefulWidget {
@@ -101,7 +103,8 @@ class _Paid_ApplyState extends State<Paid_Apply> {
                                 width: 130,
                                 child: ElevatedButton(
                                   onPressed: () {
-                                    // Get.to(() => const Free_Apply());
+                                    Get.to(
+                                        () => Thanks_Screen(isChecking: true));
                                   },
                                   child: Text(
                                     'Submit',

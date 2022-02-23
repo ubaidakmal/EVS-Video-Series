@@ -1,3 +1,4 @@
+import 'package:evs_app/auth/login.dart';
 import 'package:evs_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+      // home: const Login_Screen(),
       home: const Splash_Screen(),
     );
   }
