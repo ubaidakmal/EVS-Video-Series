@@ -1,4 +1,5 @@
 import 'package:evs_app/auth/apply%20now/apply.dart';
+import 'package:evs_app/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -116,23 +117,28 @@ class _Form_MenuState extends State<Form_Menu> {
                           const SizedBox(
                             height: value1,
                           ),
-                          Container(
-                            height: 40,
-                            width: 250,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                border: Border.all(
-                                    color: color1,
-                                    width: .5,
-                                    style: BorderStyle.solid)),
-                            child: Center(
-                                child: Text(
-                              'LOGIN',
-                              style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w700,
-                                  color: color1),
-                            )),
+                          InkWell(
+                            child: Container(
+                              height: 40,
+                              width: 250,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  border: Border.all(
+                                      color: color1,
+                                      width: .5,
+                                      style: BorderStyle.solid)),
+                              child: Center(
+                                  child: Text(
+                                'LOGIN',
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w700,
+                                    color: color1),
+                              )),
+                            ),
+                            onTap: () {
+                              Get.to(() => const Login_Screen());
+                            },
                           ),
                           const SizedBox(
                             height: value1,
