@@ -60,7 +60,7 @@ class _Free_ApplyState extends State<Free_Apply> {
                         child: Text(
                           'Learn How To Apply?',
                           style: TextStyle(
-                              fontSize: 17,
+                              fontSize: 15,
                               fontWeight: FontWeight.w400,
                               color: color1),
                         ),

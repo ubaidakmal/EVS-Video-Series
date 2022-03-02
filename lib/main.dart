@@ -1,5 +1,3 @@
-import 'package:evs_app/auth/login.dart';
-import 'package:evs_app/screens/dashboard.dart';
 import 'package:evs_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,6 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: const Login_Screen(),
       home: const Splash_Screen(),
+      // home: const Dashboard_Screen(),
       // home: const Dashboard_Screen(),
     );
   }

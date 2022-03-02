@@ -126,14 +126,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'Name',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       'Ubaid',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -148,14 +148,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'Father Name',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       'M.Akmal',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -170,14 +170,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'CNIC',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       '32303-xxxxxxx-x',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -192,14 +192,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'Email',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       'xyz@gmail.com',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -214,14 +214,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'Phone Number',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       '0314-xxxxxxx',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -236,14 +236,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'Country',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       'Pakistan',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -258,14 +258,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'City',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       'Lahore',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -306,14 +306,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'Registration No:',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       'EVS-02-22-40829',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -328,14 +328,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'Enrolled For:',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       'EVS',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -350,14 +350,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'Training Name:',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       'EVS',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -372,14 +372,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'Payment',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       'Online/Local',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
@@ -394,14 +394,14 @@ class _Attch_RecieptState extends State<Attch_Reciept> {
                     Text(
                       'Total Payment Price',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
                           color: color2),
                     ),
                     Text(
                       '28320PKR',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),

@@ -1,13 +1,10 @@
-import 'dart:io';
-
-import 'package:dio/adapter.dart';
-import 'package:dio/dio.dart';
 import 'package:evs_app/Models/colors.dart';
 import 'package:evs_app/screens/Categories/categories.dart';
+import 'package:evs_app/screens/Categories/vides_category.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'dart:core';
 
 import '../../Models/drawer.dart';
@@ -22,60 +19,61 @@ class Courses_List extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Courses_ListState extends State<Courses_List> {
-  bool _isLoading = true;
-  final url = 'https://api.enablerspk.com/EVSVideo/CoursesByCategory';
-  var _postJson = [];
-  var i = 0;
+  // bool _isLoading = true;
+  // final url = 'https://api.enablerspk.com/EVSVideo/CoursesByCategory';
+  // var _postJson = [];
+  // var i = 0;
 
-  void fetchdata() async {
-    debugPrint('API Hit');
+  // void fetchdata() async {
+  //   debugPrint('API Hit');
 
-    // try {
-    // final response = await http.post(
-    //   Uri.parse(url),
-    // headers: {
-    //   'Content-Length': '0',
-    //   'Host': '<calculated when request is sent>',
-    //   'User-Agent': 'PostmanRuntime/7.29.0',
-    //   'Accept': '*/*',
-    //   'Accept-Encoding': 'gzip, deflate, br',
-    //   'Connection': 'keep-alive',
-    // },
-    // );
+  //   // try {
+  //   // final response = await http.post(
+  //   //   Uri.parse(url),
+  //   // headers: {
+  //   //   'Content-Length': '0',
+  //   //   'Host': '<calculated when request is sent>',
+  //   //   'User-Agent': 'PostmanRuntime/7.29.0',
+  //   //   'Accept': '*/*',
+  //   //   'Accept-Encoding': 'gzip, deflate, br',
+  //   //   'Connection': 'keep-alive',
+  //   // },
+  //   // );
 
-    Dio dio = Dio();
+  //   Dio dio = Dio();
 
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-        (HttpClient client) {
-      client.badCertificateCallback =
-          (X509Certificate cert, String host, int port) => true;
-      return client;
-    };
+  //   (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+  //       (HttpClient client) {
+  //     client.badCertificateCallback =
+  //         (X509Certificate cert, String host, int port) => true;
+  //     return client;
+  //   };
 
-    final Response response =
-        await dio.post(url, data: {'Id': '37', 'StudentId': '126550'});
-    // debugPrint('Request Served');
-    // debugPrint(
-    //     'Status Code --- > ${response.statusCode} : \nBody ----> ${response.data}');
-    // // final jsonData = json.decode(response.data);
-    // debugPrint('Without Decode ---> ${response.data[0]['Id']}');
+  //   final Response response =
+  //       await dio.post(url, data: {'Id': '37', 'StudentId': '126550'});
+  //   // debugPrint('Request Served');
+  //   // debugPrint(
+  //   //     'Status Code --- > ${response.statusCode} : \nBody ----> ${response.data}');
+  //   // // final jsonData = json.decode(response.data);
+  //   // debugPrint('Without Decode ---> ${response.data[0]['Id']}');
 
-    setState(() {
-      _postJson = response.data;
-    });
-    setState(() {
-      _isLoading = false;
-    });
-    // } catch (err) {}
-  }
+  //   setState(() {
+  //     _postJson = response.data;
+  //   });
+  //   setState(() {
+  //     _isLoading = false;
+  //   });
+  //   // } catch (err) {}
+  // }
 
-  @override
-  void initState() {
-    // ignore: todo
-    // TODO: implement initState
-    super.initState();
-    fetchdata();
-  }
+  // @override
+  // void initState() {
+  //   // ignore: todo
+  // ignore: todo
+  //   // TODO: implement initState
+  //   super.initState();
+  //   fetchdata();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +104,9 @@ class _Courses_ListState extends State<Courses_List> {
                       elevation: 0,
                       actions: [
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.to(() => const Categories());
+                            },
                             icon: Icon(
                               FontAwesomeIcons.longArrowAltLeft,
                               color: color1,
@@ -115,173 +115,176 @@ class _Courses_ListState extends State<Courses_List> {
                       centerTitle: true,
                     ),
                     drawer: const Drawer_Menu(),
-                    body: _isLoading
-                        ? const SpinKitSpinningLines(
-                            color: Color(0xfff05c2f),
-                            size: 40.0,
-                          )
-                        : SingleChildScrollView(
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 15.0, left: 30, right: 30),
-                                child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        alignment: Alignment.center,
-                                        height: 60,
-                                        color: const Color(0xfff05c2f),
-                                        // ignore: sized_box_for_whitespace
-                                        child: Container(
-                                          height: 50,
-                                          width: 310,
-                                          child: TextField(
-                                            decoration: InputDecoration(
-                                              enabled: true,
-                                              border: OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(30),
-                                                  borderSide: const BorderSide(
-                                                      color:
-                                                          Colors.transparent)),
-                                              fillColor: Colors.white,
-                                              filled: true,
-                                              hintText:
-                                                  'Search for anything...',
-                                              hintStyle: TextStyle(
-                                                  color: Colors.grey.shade400),
-                                              suffixIcon: IconButton(
-                                                onPressed: () {},
-                                                icon: Icon(
-                                                  FontAwesomeIcons.search,
-                                                  color: Colors.grey.shade400,
-                                                ),
-                                              ),
-                                              focusedBorder:
-                                                  const OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors
-                                                              .transparent)),
-                                            ),
-                                          ),
-                                        ),
+                    // body: _isLoading
+                    //     ? const SpinKitSpinningLines(
+                    //         color: Color(0xfff05c2f),
+                    //         size: 40.0,
+                    //       )
+                    //     :
+                    body: SingleChildScrollView(
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 15.0, left: 30, right: 30),
+                          child: Column(children: [
+                            Container(
+                              alignment: Alignment.center,
+                              height: 60,
+                              color: const Color(0xfff05c2f),
+                              // ignore: sized_box_for_whitespace
+                              child: Container(
+                                height: 50,
+                                width: 310,
+                                decoration: BoxDecoration(
+                                    color: color1,
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        FontAwesomeIcons.search,
+                                        color: Colors.grey.shade400,
                                       ),
-                                      const SizedBox(
-                                        height: 10,
+                                    ),
+                                    const SizedBox(
+                                      width: value3,
+                                    ),
+                                    SizedBox(
+                                      height: 50,
+                                      width: 240,
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                            enabled: true,
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(30),
+                                                borderSide: BorderSide.none),
+                                            fillColor: Colors.white,
+                                            filled: false,
+                                            hintText: 'Search for anything...',
+                                            hintStyle: TextStyle(
+                                                color: Colors.grey.shade400),
+                                            focusedBorder:
+                                                const OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white))),
                                       ),
-                                      SizedBox(
-                                        height: 70,
-                                        width: 350,
-                                        child: Center(
-                                            child: Text(
-                                          "ECOMMERCE",
-                                          style: const TextStyle(
-                                              fontSize: 40,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.white,
-                                              letterSpacing: 1),
-                                        )),
-                                      ),
-                                      const SizedBox(
-                                        height: 5,
-                                      ),
-                                      SingleChildScrollView(
-                                        child: ListView.builder(
-                                            itemCount: _postJson.length,
-                                            physics:
-                                                const ClampingScrollPhysics(),
-                                            shrinkWrap: true,
-                                            itemBuilder: (context, i) {
-                                              return Padding(
-                                                padding: const EdgeInsets.only(
-                                                    top: 10.0,
-                                                    left: 10.0,
-                                                    right: 10.0),
-                                                child: Column(
-                                                  children: [
-                                                    Stack(children: [
-                                                      Container(
-                                                        margin: const EdgeInsets
-                                                            .all(0),
-                                                        height: 200,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          image: DecorationImage(
-                                                              image: NetworkImage(
-                                                                  _postJson[i][
-                                                                      "CourseThumbnail"]),
-                                                              fit:
-                                                                  BoxFit.cover),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        alignment: Alignment
-                                                            .bottomCenter,
-                                                        margin: const EdgeInsets
-                                                            .all(0),
-                                                        height: 200,
-                                                        decoration:
-                                                            const BoxDecoration(
-                                                          color: Colors.black45,
-                                                        ),
-                                                        child: InkWell(
-                                                          child: Center(
-                                                            child: Text(
-                                                              "${_postJson[i]["CourseName"]}",
-                                                              style: const TextStyle(
-                                                                  fontSize: 36,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  color: Colors
-                                                                      .white,
-                                                                  letterSpacing:
-                                                                      1),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                            ),
-                                                          ),
-                                                          onTap: () {
-                                                            // Navigator.of(context).push(
-                                                            //     MaterialPageRoute(
-                                                            //         builder:
-                                                            //             (BuildContext context) =>
-                                                            //                 const Lectures_menu()));
-                                                          },
-                                                        ),
-                                                      ),
-                                                    ]),
-                                                    const SizedBox(
-                                                      height: 5,
-                                                    ),
-                                                    Container(
-                                                      alignment:
-                                                          Alignment.topLeft,
-                                                      width: 350,
-                                                      child: Text(
-                                                        "${_postJson[i]["Description"]}",
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            color: Colors
-                                                                .grey.shade600,
-                                                            letterSpacing: 1),
-                                                        textAlign:
-                                                            TextAlign.start,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              );
-                                            }),
-                                      )
-                                    ]),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                          )))));
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            // ignore: prefer_const_constructors
+
+                            Text(
+                              "ECOMMERCE",
+                              style: TextStyle(
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold,
+                                  color: color1,
+                                  letterSpacing: 1),
+                            ),
+
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Learn from the expert team of mentors the hidden secrets to becoming a successfull ecommerce specialist and bring explore numerous means of ecommerce enterpreneurship",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
+                                  color: color1,
+                                  letterSpacing: 1),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(
+                              height: value2,
+                            ),
+                            Box1(),
+                            const SizedBox(
+                              height: value2,
+                            ),
+                            Box1(),
+                            const SizedBox(
+                              height: value2,
+                            ),
+                            Box1(),
+                            const SizedBox(
+                              height: value2,
+                            ),
+                            Box1(),
+                            const SizedBox(
+                              height: value2,
+                            ),
+                          ]),
+                        ),
+                      ),
+                    )))));
+  }
+
+  // ignore: non_constant_identifier_names
+  Container Box1() {
+    return Container(
+      height: 130,
+      width: 300,
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(17), color: color1),
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: InkWell(
+          child: Row(
+            children: [
+              Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(17),
+                    image: const DecorationImage(
+                      image: AssetImage('images/image2.jpg'),
+                      fit: BoxFit.cover,
+                    )),
+                // child: const Image(
+                //   image: AssetImage('images/image2.jpg'),
+                //   fit: BoxFit.cover,
+                // ),
+              ),
+              const SizedBox(
+                width: value1,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    'Amazon FBA Private Label',
+                    style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: color2),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Text(
+                    'Learn from the expert team of\nmentors the hidden secrets to \nbecoming a successfull ecommerce\nspecialist and bring explore',
+                    style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w300,
+                        color: color2),
+                  ),
+                ],
+              )
+            ],
+          ),
+          onTap: () {
+            Get.to(() => const Videos_Category());
+          },
+        ),
+      ),
+    );
   }
 }

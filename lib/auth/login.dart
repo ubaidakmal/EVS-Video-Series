@@ -1,4 +1,5 @@
 import 'package:evs_app/Models/colors.dart';
+import 'package:evs_app/auth/apply%20now/apply.dart';
 import 'package:evs_app/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,9 @@ class _Login_ScreenState extends State<Login_Screen> {
                   elevation: 0,
                   actions: [
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(() => const Apply_Now());
+                        },
                         child: Text(
                           'Create Account',
                           style: TextStyle(color: color1),
@@ -71,7 +74,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                           children: [
                             Container(
                               height: 250,
-                              width: 300,
+                              width: 350,
                               decoration: BoxDecoration(color: color1),
                               child: Padding(
                                 padding: const EdgeInsets.only(

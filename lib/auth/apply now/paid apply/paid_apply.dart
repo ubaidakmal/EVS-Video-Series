@@ -64,7 +64,7 @@ class _Paid_ApplyState extends State<Paid_Apply> {
                             child: Text(
                               'Learn How To Apply?',
                               style: TextStyle(
-                                  fontSize: 17,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w400,
                                   color: color1),
                             ),

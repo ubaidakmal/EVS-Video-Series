@@ -1,5 +1,7 @@
 import 'package:evs_app/Models/colors.dart';
+import 'package:evs_app/auth/login.dart';
 import 'package:evs_app/screens/Categories/categories.dart';
+import 'package:evs_app/screens/contact_us.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -33,7 +35,9 @@ class Drawer_Menu extends StatelessWidget {
             floatingActionButton: Align(
               alignment: Alignment.bottomCenter,
               child: FloatingActionButton.extended(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => const Login_Screen());
+                },
                 label: Text(
                   'Logout',
                   style:
@@ -78,23 +82,17 @@ class Drawer_Menu extends StatelessWidget {
                               onPressed: () {},
                               icon: Icon(
                                 FontAwesomeIcons.table,
-                                size: 25,
+                                size: 19,
                                 color: color1,
                               )),
                           title: Text(
                             'Dashboard',
                             style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 17,
                                 fontWeight: FontWeight.w400,
                                 color: color1),
                           ),
                           onTap: () {},
-                          trailing: IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                FontAwesomeIcons.longArrowAltRight,
-                                color: color1,
-                              )),
                         ),
                         ListTile(
                           leading: IconButton(
@@ -103,48 +101,38 @@ class Drawer_Menu extends StatelessWidget {
                               },
                               icon: Icon(
                                 FontAwesomeIcons.listAlt,
-                                size: 25,
+                                size: 19,
                                 color: color1,
                               )),
                           title: Text(
                             'Categories',
                             style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 17,
                                 fontWeight: FontWeight.w400,
                                 color: color1),
                           ),
                           onTap: () {
                             Get.to(() => const Categories());
                           },
-                          trailing: IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                FontAwesomeIcons.longArrowAltRight,
-                                color: color1,
-                              )),
                         ),
                         ListTile(
                           leading: IconButton(
                               onPressed: () {},
                               icon: Icon(
                                 FontAwesomeIcons.solidQuestionCircle,
-                                size: 25,
+                                size: 19,
                                 color: color1,
                               )),
                           title: Text(
                             'Need Help',
                             style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 17,
                                 fontWeight: FontWeight.w400,
                                 color: color1),
                           ),
-                          onTap: () {},
-                          trailing: IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                FontAwesomeIcons.longArrowAltRight,
-                                color: color1,
-                              )),
+                          onTap: () {
+                            Get.to(() => const Contact_us());
+                          },
                         ),
                       ],
                     ),

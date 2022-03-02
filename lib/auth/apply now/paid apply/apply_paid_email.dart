@@ -1,6 +1,5 @@
 import 'package:evs_app/Models/colors.dart';
 import 'package:evs_app/auth/apply%20now/paid%20apply/attach_reciept.dart';
-import 'package:evs_app/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

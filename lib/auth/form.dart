@@ -1,3 +1,4 @@
+import 'package:evs_app/auth/apply%20now/apply%20free/apply_free_email.dart';
 import 'package:evs_app/auth/apply%20now/apply.dart';
 import 'package:evs_app/auth/login.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import '../Models/colors.dart';
+import '../screens/contact_us.dart';
 
 // ignore: camel_case_types
 class Form_Menu extends StatefulWidget {
@@ -96,23 +98,28 @@ class _Form_MenuState extends State<Form_Menu> {
                           const SizedBox(
                             height: value1,
                           ),
-                          Container(
-                            height: 40,
-                            width: 250,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                border: Border.all(
-                                    color: color1,
-                                    width: .5,
-                                    style: BorderStyle.solid)),
-                            child: Center(
-                                child: Text(
-                              'APPLICATION STATUS',
-                              style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w700,
-                                  color: color1),
-                            )),
+                          InkWell(
+                            child: Container(
+                              height: 40,
+                              width: 250,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  border: Border.all(
+                                      color: color1,
+                                      width: .5,
+                                      style: BorderStyle.solid)),
+                              child: Center(
+                                  child: Text(
+                                'APPLICATION STATUS',
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w700,
+                                    color: color1),
+                              )),
+                            ),
+                            onTap: () {
+                              Get.to(() => const Free_Apply_Email());
+                            },
                           ),
                           const SizedBox(
                             height: value1,
@@ -149,7 +156,9 @@ class _Form_MenuState extends State<Form_Menu> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.to(() => const Contact_us());
+                              },
                               child: Text(
                                 'Need Help',
                                 style: TextStyle(

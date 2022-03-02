@@ -61,29 +61,42 @@ class _CategoriesState extends State<Categories> {
                           child: Container(
                             height: 50,
                             width: 310,
-                            child: TextField(
-                              decoration: InputDecoration(
-                                enabled: true,
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide: const BorderSide(
-                                        color: Colors.transparent)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                hintText: 'Search for anything...',
-                                hintStyle:
-                                    TextStyle(color: Colors.grey.shade400),
-                                suffixIcon: IconButton(
+                            decoration: BoxDecoration(
+                                color: color1,
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Row(
+                              children: [
+                                IconButton(
                                   onPressed: () {},
                                   icon: Icon(
                                     FontAwesomeIcons.search,
                                     color: Colors.grey.shade400,
                                   ),
                                 ),
-                                focusedBorder: const OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Colors.transparent)),
-                              ),
+                                const SizedBox(
+                                  width: value3,
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                  width: 240,
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                        enabled: true,
+                                        border: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(30),
+                                            borderSide: BorderSide.none),
+                                        fillColor: Colors.white,
+                                        filled: false,
+                                        hintText: 'Search for anything...',
+                                        hintStyle: TextStyle(
+                                            color: Colors.grey.shade400),
+                                        focusedBorder: const OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Colors.white))),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -213,7 +226,7 @@ class _CategoriesState extends State<Categories> {
               child: const Text(
                 'Amazon Marketing',
                 style: TextStyle(
-                    fontSize: 27,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     letterSpacing: 1),
@@ -251,7 +264,7 @@ class _CategoriesState extends State<Categories> {
               child: const Text(
                 'E-COMMERCE',
                 style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     letterSpacing: 1),
@@ -289,7 +302,7 @@ class _CategoriesState extends State<Categories> {
               child: const Text(
                 'Amazon Marketing',
                 style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     letterSpacing: 1),
@@ -328,7 +341,7 @@ class _CategoriesState extends State<Categories> {
               child: const Text(
                 'Freelancing',
                 style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     letterSpacing: 1),

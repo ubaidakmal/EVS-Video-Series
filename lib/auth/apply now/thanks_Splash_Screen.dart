@@ -1,8 +1,11 @@
-import 'dart:async';
+// ignore_for_file: file_names
+
+import 'dart:async' show Timer;
 
 import 'package:dotted_border/dotted_border.dart';
 import 'package:evs_app/Models/colors.dart';
 import 'package:evs_app/auth/apply%20now/paid%20apply/apply_paid_email.dart';
+import 'package:evs_app/screens/contact_support.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -245,7 +248,7 @@ class _Paid_Thanks_ScreenState extends State<Paid_Thanks_Screen> {
                                 Text(
                                   'For signing up on Enablers Training',
                                   style: TextStyle(
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w300,
                                       color: color1),
                                 ),
@@ -256,14 +259,14 @@ class _Paid_Thanks_ScreenState extends State<Paid_Thanks_Screen> {
                                     Text(
                                       'Program-',
                                       style: TextStyle(
-                                          fontSize: 19,
+                                          fontSize: 16,
                                           fontWeight: FontWeight.w300,
                                           color: color1),
                                     ),
                                     Text(
                                       'ENABLING VIDEO SERIES',
                                       style: TextStyle(
-                                          fontSize: 19,
+                                          fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                           color: color1),
                                     ),
@@ -344,7 +347,9 @@ class _Paid_Thanks_ScreenState extends State<Paid_Thanks_Screen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Get.to(() => const Contact_Support());
+                                  },
                                   child: Text(
                                     'Support',
                                     style: TextStyle(
