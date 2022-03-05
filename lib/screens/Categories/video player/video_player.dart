@@ -46,7 +46,7 @@ class _video_demoState extends State<video_demo> {
           child: Chewie(
             controller: _chewieController = ChewieController(
               videoPlayerController: VideoPlayerController.asset(
-                "images/BusinessCard8.mp4",
+                "images/video1.mp4",
               ),
               aspectRatio: 16 / 9,
               autoInitialize: false,

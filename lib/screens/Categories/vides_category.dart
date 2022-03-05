@@ -5,8 +5,8 @@ import 'package:dio/dio.dart';
 import 'package:evs_app/Models/colors.dart';
 import 'package:evs_app/screens/Categories/courses.dart';
 import 'package:evs_app/screens/Categories/video%20player/video_player.dart';
-import 'package:evs_app/screens/Categories/video_player.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -25,57 +25,43 @@ class Videos_Category extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Videos_CategoryState extends State<Videos_Category> {
-  // final url = 'https://api.enablerspk.com/EVSVideo/CoursesByCategory';
-  // var _postJson = [];
-  // var i = 0;
+  bool _isLoading = true;
+  final url = 'https://api.enablerspk.com/EVS/VideoSeries';
+  var _postJson = [];
+  void fetchdata() async {
+    debugPrint('API Hit');
+    Dio dio = Dio();
 
-  // void fetchdata() async {
-  //   debugPrint('API Hit');
+    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (HttpClient client) {
+      client.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+      return client;
+    };
 
-  //   // try {
-  //   // final response = await http.post(
-  //   //   Uri.parse(url),
-  //   // headers: {
-  //   //   'Content-Length': '0',
-  //   //   'Host': '<calculated when request is sent>',
-  //   //   'User-Agent': 'PostmanRuntime/7.29.0',
-  //   //   'Accept': '*/*',
-  //   //   'Accept-Encoding': 'gzip, deflate, br',
-  //   //   'Connection': 'keep-alive',
-  //   // },
-  //   // );
+    final response = await dio.post(url, data: {'Id': '211'});
+    debugPrint('Request Served');
+    debugPrint(
+        'Status Code --- > ${response.statusCode} : \nBody ----> ${response.data}');
+    // final jsonData = json.decode(response.data);
+    debugPrint('Without Decode ---> ${response.data[0]['Id']}');
 
-  //   Dio dio = Dio();
+    setState(() {
+      _postJson = response.data[0]['mEVSVideoBO'];
+    });
+    setState(() {
+      _isLoading = false;
+    });
+    // } catch (err) {}
+  }
 
-  //   (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-  //       (HttpClient client) {
-  //     client.badCertificateCallback =
-  //         (X509Certificate cert, String host, int port) => true;
-  //     return client;
-  //   };
-
-  //   final response =
-  //       await dio.post(url, data: {'Id': '37', 'StudentId': '126550'});
-  //   // debugPrint('Request Served');
-  //   // debugPrint(
-  //   //     'Status Code --- > ${response.statusCode} : \nBody ----> ${response.data}');
-  //   // // final jsonData = json.decode(response.data);
-  //   // debugPrint('Without Decode ---> ${response.data[0]['Id']}');
-
-  //   setState(() {
-  //     _postJson = response.data;
-  //   });
-  //   setState(() {});
-  //   // } catch (err) {}
-  // }
-
-  // @override
-  // void initState() {
-  //   // ignore: todo
-  //   // TODO: implement initState
-  //   super.initState();
-  //   fetchdata();
-  // }
+  @override
+  void initState() {
+    // ignore: todo
+    // TODO: implement initState
+    super.initState();
+    fetchdata();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,107 +103,194 @@ class _Videos_CategoryState extends State<Videos_Category> {
                       centerTitle: true,
                     ),
                     drawer: const Drawer_Menu(),
-                    // body: _isLoading
-                    //     ? const SpinKitSpinningLines(
-                    //         color: Color(0xfff05c2f),
-                    //         size: 40.0,
-                    //       )
-                    //     :
-                    body: SingleChildScrollView(
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 15.0, left: 30, right: 30),
-                          child: Column(children: [
-                            Container(
-                              alignment: Alignment.center,
-                              height: 60,
-                              color: const Color(0xfff05c2f),
-                              // ignore: sized_box_for_whitespace
-                              child: Container(
-                                height: 50,
-                                width: 310,
-                                decoration: BoxDecoration(
-                                    color: color1,
-                                    borderRadius: BorderRadius.circular(30)),
-                                child: Row(
-                                  children: [
-                                    IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        FontAwesomeIcons.search,
-                                        color: Colors.grey.shade400,
+                    body: _isLoading
+                        ? SpinKitSpinningLines(
+                            color: color1,
+                            size: 40.0,
+                          )
+                        : SingleChildScrollView(
+                            child: Center(
+                                child: Padding(
+                            padding: const EdgeInsets.only(
+                                top: 15.0, left: 30, right: 30),
+                            child: Column(children: [
+                              Container(
+                                alignment: Alignment.center,
+                                height: 60,
+                                color: const Color(0xfff05c2f),
+                                // ignore: sized_box_for_whitespace
+                                child: Container(
+                                  height: 50,
+                                  width: 310,
+                                  decoration: BoxDecoration(
+                                      color: color1,
+                                      borderRadius: BorderRadius.circular(30)),
+                                  child: Row(
+                                    children: [
+                                      IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(
+                                          FontAwesomeIcons.search,
+                                          color: Colors.grey.shade400,
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(
-                                      width: value3,
-                                    ),
-                                    SizedBox(
-                                      height: 50,
-                                      width: 240,
-                                      child: TextField(
-                                        decoration: InputDecoration(
-                                            enabled: true,
-                                            border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(30),
-                                                borderSide: BorderSide.none),
-                                            fillColor: Colors.white,
-                                            filled: false,
-                                            hintText: 'Search for anything...',
-                                            hintStyle: TextStyle(
-                                                color: Colors.grey.shade400),
-                                            focusedBorder:
-                                                const OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        color: Colors.white))),
+                                      const SizedBox(
+                                        width: value3,
                                       ),
-                                    ),
-                                  ],
+                                      SizedBox(
+                                        height: 50,
+                                        width: 240,
+                                        child: TextField(
+                                          decoration: InputDecoration(
+                                              enabled: true,
+                                              border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(30),
+                                                  borderSide: BorderSide.none),
+                                              fillColor: Colors.white,
+                                              filled: false,
+                                              hintText:
+                                                  'Search for anything...',
+                                              hintStyle: TextStyle(
+                                                  color: Colors.grey.shade400),
+                                              focusedBorder:
+                                                  const OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                          color:
+                                                              Colors.white))),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            // ignore: prefer_const_constructors
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              // ignore: prefer_const_constructors
 
-                            Box1(),
-                            const SizedBox(
-                              height: value2,
-                            ),
-                            Box1(),
-                            const SizedBox(
-                              height: value2,
-                            ),
-                            Box1(),
-                            const SizedBox(
-                              height: value2,
-                            ),
-                            Box1(),
-                            const SizedBox(
-                              height: value2,
-                            ),
-                            Box1(),
-                            const SizedBox(
-                              height: value2,
-                            ),
-                            Box1(),
-                            const SizedBox(
-                              height: value2,
-                            ),
-                            Box1(),
-                            const SizedBox(
-                              height: value2,
-                            ),
-                            Box1(),
-                            const SizedBox(
-                              height: value2,
-                            ),
-                          ]),
-                        ),
-                      ),
-                    )))));
+                              SingleChildScrollView(
+                                child: Column(children: [
+                                  ListView.builder(
+                                      itemCount: _postJson.length,
+                                      physics: const ClampingScrollPhysics(),
+                                      shrinkWrap: true,
+                                      itemBuilder: (context, i) {
+                                        return Column(
+                                          children: [
+                                            Container(
+                                              height: 130,
+                                              width: 300,
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(17),
+                                                  color: color1),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(20.0),
+                                                child: InkWell(
+                                                  child: Row(
+                                                    children: [
+                                                      InkWell(
+                                                        child: Container(
+                                                            height: 80,
+                                                            width: 80,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                                    borderRadius:
+                                                                        BorderRadius
+                                                                            .circular(
+                                                                                0),
+                                                                    color:
+                                                                        color2,
+                                                                    image:
+                                                                        DecorationImage(
+                                                                      image: NetworkImage(
+                                                                          _postJson[i]
+                                                                              [
+                                                                              "VideoThumbnail"]),
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    )),
+                                                            child: IconButton(
+                                                                onPressed:
+                                                                    () {},
+                                                                icon: Icon(
+                                                                  FontAwesomeIcons
+                                                                      .play,
+                                                                  color: color1,
+                                                                ))),
+                                                        onTap: () {},
+                                                      ),
+                                                      const SizedBox(
+                                                        width: value1,
+                                                      ),
+                                                      Center(
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceEvenly,
+                                                          children: [
+                                                            SizedBox(
+                                                              width: 150,
+                                                              child: Text(
+                                                                "${_postJson[i]["CourseName"]}",
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        13,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    color:
+                                                                        color2),
+                                                              ),
+                                                            ),
+                                                            const SizedBox(
+                                                              height: 3,
+                                                            ),
+                                                            Text(
+                                                              "${_postJson[i]["Description"]}",
+                                                              style: TextStyle(
+                                                                  fontSize: 10,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w300,
+                                                                  color:
+                                                                      color2),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  onTap: () {
+                                                    setState(() {
+                                                      Get.to(() => video_demo(
+                                                          autoplay: true,
+                                                          looping: true,
+                                                          videoPlayerController:
+                                                              VideoPlayerController
+                                                                  .asset(
+                                                            "images/video1.mp4",
+                                                          )));
+                                                    });
+                                                  },
+                                                ),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              height: value2,
+                                            )
+                                          ],
+                                        );
+                                      })
+                                ]),
+                              ),
+                            ]),
+                          )))))));
   }
 
   // ignore: non_constant_identifier_names
