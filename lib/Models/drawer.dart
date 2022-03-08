@@ -36,7 +36,7 @@ class Drawer_Menu extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: FloatingActionButton.extended(
                 onPressed: () {
-                  Get.to(() => const Login_Screen());
+                  Get.offAll(() => const Login_Screen());
                 },
                 label: Text(
                   'Logout',

@@ -1,4 +1,4 @@
-import 'package:evs_app/screens/splash_screen.dart';
+import 'package:evs_app/screens/splashscreens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: const Login_Screen(),
-      home: const Splash_Screen(),
+      home: SplashGroup(isChecking: true),
       // home: const Dashboard_Screen(),
       // home: const Dashboard_Screen(),
     );

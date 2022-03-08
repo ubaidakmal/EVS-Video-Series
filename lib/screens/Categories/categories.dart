@@ -272,15 +272,80 @@ class _CategoriesState extends State<Categories> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           children: [
-                                            category3(),
-                                            const SizedBox(
-                                              width: value1,
+                                            SizedBox(
+                                              height: 110,
+                                              child: ListView.builder(
+                                                  scrollDirection:
+                                                      Axis.horizontal,
+                                                  itemCount: _postJson.length,
+                                                  physics:
+                                                      const ClampingScrollPhysics(),
+                                                  shrinkWrap: true,
+                                                  itemBuilder: (context, i) {
+                                                    return Row(
+                                                      children: [
+                                                        Stack(children: [
+                                                          Container(
+                                                            height: 100,
+                                                            width: 150,
+                                                            decoration: BoxDecoration(
+                                                                image: DecorationImage(
+                                                                    image: NetworkImage(
+                                                                        _postJson[i]
+                                                                            [
+                                                                            "CategoryThumbnail"]),
+                                                                    fit: BoxFit
+                                                                        .cover),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            6)),
+                                                          ),
+                                                          Container(
+                                                            alignment: Alignment
+                                                                .bottomCenter,
+                                                            height: 100,
+                                                            width: 150,
+                                                            decoration: BoxDecoration(
+                                                                color: Colors
+                                                                    .black45,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            6)),
+                                                            child: Center(
+                                                              child: InkWell(
+                                                                child: Text(
+                                                                  "${_postJson[i]["Name"]}",
+                                                                  style: const TextStyle(
+                                                                      fontSize:
+                                                                          16,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      color: Colors
+                                                                          .white,
+                                                                      letterSpacing:
+                                                                          0),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                ),
+                                                                onTap: () {
+                                                                  Get.to(() =>
+                                                                      const Courses_List());
+                                                                },
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ]),
+                                                        const SizedBox(
+                                                          width: value1,
+                                                        ),
+                                                      ],
+                                                    );
+                                                  }),
                                             ),
-                                            category4(),
-                                            const SizedBox(
-                                              width: value1,
-                                            ),
-                                            category5(),
                                           ],
                                         ),
                                       ),

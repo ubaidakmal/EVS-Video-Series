@@ -5,7 +5,10 @@ import 'package:dio/dio.dart';
 import 'package:evs_app/Models/colors.dart';
 import 'package:evs_app/auth/apply%20now/apply.dart';
 import 'package:evs_app/screens/dashboard.dart';
+import 'package:evs_app/screens/splashscreens/splash_screen.dart';
+import 'package:evs_app/screens/splashscreens/splash_screen2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
 // ignore: camel_case_types
@@ -98,28 +101,24 @@ class _Login_ScreenState extends State<Login_Screen> {
                                             borderRadius:
                                                 BorderRadius.circular(30)),
                                         child: TextFormField(
-                                            style: const TextStyle(
-                                                color: Colors.grey),
-                                            cursorColor: Colors.grey,
+                                            style: TextStyle(color: color2),
+                                            cursorColor: color2,
                                             controller: _useremail,
                                             decoration: InputDecoration(
                                                 hintText:
                                                     'Enter your username... ',
-                                                hintStyle: const TextStyle(
-                                                    color: Colors.grey),
+                                                hintStyle:
+                                                    TextStyle(color: color2),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                        borderSide:
-                                                            const BorderSide(
-                                                                color: Colors
-                                                                    .grey),
+                                                        borderSide: BorderSide(
+                                                            color: color2),
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30)),
                                                 border: OutlineInputBorder(
-                                                    borderSide:
-                                                        const BorderSide(
-                                                            color: Colors.grey),
+                                                    borderSide: BorderSide(
+                                                        color: color2),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30)),
@@ -143,7 +142,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                                             borderRadius:
                                                 BorderRadius.circular(30)),
                                         child: TextFormField(
-                                            style: TextStyle(color: color1),
+                                            style: TextStyle(color: color2),
                                             // controller: _userNameController,
                                             cursorColor: Colors.grey,
                                             controller: _userPassword,
@@ -152,13 +151,13 @@ class _Login_ScreenState extends State<Login_Screen> {
                                               hintText: 'Enter your password ',
                                               focusedBorder: OutlineInputBorder(
                                                   borderSide:
-                                                      BorderSide(color: color1),
+                                                      BorderSide(color: color2),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30)),
                                               border: OutlineInputBorder(
-                                                  borderSide: const BorderSide(
-                                                      color: Colors.grey),
+                                                  borderSide:
+                                                      BorderSide(color: color2),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30)),
@@ -210,7 +209,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                                     child: ElevatedButton(
                                       onPressed: () async {
                                         setState(() {
-                                          isLoading = true;
+                                          isLoading = false;
                                         });
                                         if (!formkey.currentState!.validate()) {
                                           return;
@@ -271,10 +270,13 @@ class _Login_ScreenState extends State<Login_Screen> {
     debugPrint('Without Decode ---> ${response.data[0]['Id']}');
     // ignore: unrelated_type_equality_checks
     if (response.data[0]['Id'] != null) {
-      Get.to(() => const Dashboard_Screen());
+      Get.offAll(() => SplashScreen2());
 
       setState(() {
         isLoading = false;
+      });
+      setState(() {
+        isLoading = true;
       });
     } else {
       showDialog(
