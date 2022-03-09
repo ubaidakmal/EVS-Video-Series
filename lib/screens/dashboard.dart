@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../auth/login.dart';
@@ -45,7 +46,10 @@ class _Dashboard_ScreenState extends State<Dashboard_Screen> {
             elevation: 0,
             actions: [
               IconButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    SharedPreferences _prefs =
+                        await SharedPreferences.getInstance();
+                    await _prefs.clear();
                     Get.offAll(() => const Login_Screen());
                   },
                   icon: Icon(

@@ -5,6 +5,7 @@ import 'package:evs_app/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../auth/form.dart';
 
@@ -29,14 +30,27 @@ class Splash_Screen extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Splash_ScreenState extends State<Splash_Screen> {
+  var hasData = false.obs;
+  int? val;
+
+  void checkLogin() async {
+    SharedPreferences prefrences = await SharedPreferences.getInstance();
+    val = prefrences.getInt("Logindata");
+    hasData.value = true;
+    if (val != null) {
+      Get.off(() => const Dashboard_Screen());
+    } else {
+      Get.off(() => const Form_Menu());
+    }
+  }
+
   @override
   void initState() {
+    Timer(const Duration(seconds: 1), () {});
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    Timer(const Duration(seconds: 2), () {
-      Get.off(() => const Form_Menu());
-    });
+    checkLogin();
   }
 
   @override
@@ -134,7 +148,7 @@ class _Splash_Screen2State extends State<Splash_Screen> {
     // TODO: implement initState
     super.initState();
     Timer(const Duration(seconds: 2), () {
-      Get.to(() => const Dashboard_Screen());
+      Get.off(() => const Dashboard_Screen());
     });
   }
 
