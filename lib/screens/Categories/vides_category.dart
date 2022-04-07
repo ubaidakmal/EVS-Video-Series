@@ -83,7 +83,7 @@ class _Videos_CategoryState extends State<Videos_Category> {
                     appBar: AppBar(
                       backgroundColor: Colors.transparent,
                       title: Text(
-                        'All Courses Videos',
+                        'Lectures',
                         style: TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.bold,
@@ -117,7 +117,7 @@ class _Videos_CategoryState extends State<Videos_Category> {
                               Container(
                                 alignment: Alignment.center,
                                 height: 60,
-                                color: const Color(0xfff05c2f),
+
                                 // ignore: sized_box_for_whitespace
                                 child: Container(
                                   height: 50,
@@ -179,7 +179,7 @@ class _Videos_CategoryState extends State<Videos_Category> {
                                         return Column(
                                           children: [
                                             Container(
-                                              height: 130,
+                                              height: 120,
                                               width: 300,
                                               decoration: BoxDecoration(
                                                   borderRadius:
@@ -187,14 +187,14 @@ class _Videos_CategoryState extends State<Videos_Category> {
                                                   color: color1),
                                               child: Padding(
                                                 padding:
-                                                    const EdgeInsets.all(20.0),
+                                                    const EdgeInsets.all(10.0),
                                                 child: InkWell(
                                                   child: Row(
                                                     children: [
                                                       InkWell(
                                                         child: Container(
-                                                            height: 80,
-                                                            width: 80,
+                                                            height: 100,
+                                                            width: 100,
                                                             decoration:
                                                                 BoxDecoration(
                                                                     borderRadius:
@@ -232,15 +232,15 @@ class _Videos_CategoryState extends State<Videos_Category> {
                                                                   .start,
                                                           mainAxisAlignment:
                                                               MainAxisAlignment
-                                                                  .spaceEvenly,
+                                                                  .spaceBetween,
                                                           children: [
                                                             SizedBox(
-                                                              width: 150,
+                                                              width: 160,
                                                               child: Text(
                                                                 "${_postJson[i]["CourseName"]}",
                                                                 style: TextStyle(
                                                                     fontSize:
-                                                                        13,
+                                                                        16,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,

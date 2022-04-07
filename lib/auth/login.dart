@@ -69,7 +69,6 @@ class _Login_ScreenState extends State<Login_Screen> {
                   ))
             ],
           ),
-          drawer: Drawer_Menu(),
           body: SingleChildScrollView(
             child: Center(
               child: Padding(
@@ -80,7 +79,7 @@ class _Login_ScreenState extends State<Login_Screen> {
                     Text(
                       'Login',
                       style: TextStyle(
-                          fontSize: 80,
+                          fontSize: 60,
                           fontWeight: FontWeight.bold,
                           color: color1),
                     ),
@@ -98,157 +97,170 @@ class _Login_ScreenState extends State<Login_Screen> {
                     const SizedBox(
                       height: value2,
                     ),
-                    Form(
-                      key: formkey,
-                      child: Stack(
-                        children: [
-                          Container(
-                            height: 250,
-                            width: 350,
-                            decoration: BoxDecoration(color: color1),
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 40.0, left: 20, right: 20),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    height: 50,
-                                    width: 290,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    child: TextFormField(
-                                        style: TextStyle(color: color2),
-                                        cursorColor: color2,
-                                        controller: _useremail,
-                                        decoration: InputDecoration(
-                                            hintText: 'Enter your username... ',
-                                            hintStyle: TextStyle(color: color2),
-                                            focusedBorder: OutlineInputBorder(
-                                                borderSide:
-                                                    BorderSide(color: color2),
-                                                borderRadius:
-                                                    BorderRadius.circular(30)),
-                                            border: OutlineInputBorder(
-                                                borderSide:
-                                                    BorderSide(color: color2),
-                                                borderRadius:
-                                                    BorderRadius.circular(30)),
-                                            suffixIcon:
-                                                const Icon(Icons.person)),
-                                        validator: (value) {
-                                          if (value!.isEmpty) {
-                                            return "* Required";
-                                          } else {
-                                            return null;
-                                          }
-                                        }),
-                                  ),
-                                  const SizedBox(
-                                    height: value1,
-                                  ),
-                                  Container(
-                                    height: 50,
-                                    width: 300,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    child: TextFormField(
-                                        style: TextStyle(color: color2),
-                                        // controller: _userNameController,
-                                        cursorColor: color2,
-                                        controller: _userPassword,
-                                        obscureText: hidePassword,
-                                        decoration: InputDecoration(
-                                          hintText: 'Enter your password ',
-                                          focusedBorder: OutlineInputBorder(
-                                              borderSide:
-                                                  BorderSide(color: color2),
-                                              borderRadius:
-                                                  BorderRadius.circular(30)),
-                                          border: OutlineInputBorder(
-                                              borderSide:
-                                                  BorderSide(color: color2),
-                                              borderRadius:
-                                                  BorderRadius.circular(30)),
-                                          suffixIcon: IconButton(
-                                              onPressed: () {
-                                                setState(() {
-                                                  hidePassword = !hidePassword;
-                                                });
-                                              },
-                                              icon: Icon(hidePassword
-                                                  ? Icons.visibility_off
-                                                  : Icons.visibility)),
-                                        ),
-                                        validator: (value) {
-                                          if (value!.isEmpty) {
-                                            return "* Required";
-                                          } else {
-                                            return null;
-                                          }
-                                        }),
-                                  ),
-                                  const SizedBox(
-                                    height: value3,
-                                  ),
-                                  Text(
-                                    "By pressing 'submit' you agree to our ",
-                                    style:
-                                        TextStyle(color: Colors.grey.shade500),
-                                  ),
-                                  TextButton(
-                                    onPressed: () {},
-                                    child: const Text(
-                                      'terms & conditions',
-                                      style: TextStyle(
-                                        decoration: TextDecoration.underline,
+                    Center(
+                      child: Form(
+                        key: formkey,
+                        child: Stack(
+                          children: [
+                            Center(
+                              child: Container(
+                                height: 300,
+                                width: 350,
+                                decoration: BoxDecoration(
+                                    color: color1,
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 40.0, left: 20, right: 20),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 290,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(30)),
+                                        child: TextFormField(
+                                            style: TextStyle(color: color2),
+                                            cursorColor: color2,
+                                            controller: _useremail,
+                                            decoration: InputDecoration(
+                                                hintText:
+                                                    'Enter your username... ',
+                                                hintStyle:
+                                                    TextStyle(color: color2),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                            color: color2),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30)),
+                                                border: OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: color2),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30)),
+                                                suffixIcon:
+                                                    const Icon(Icons.person)),
+                                            validator: (value) {
+                                              if (value!.isEmpty) {
+                                                return "* Required";
+                                              } else {
+                                                return null;
+                                              }
+                                            }),
                                       ),
-                                    ),
+                                      const SizedBox(
+                                        height: value1,
+                                      ),
+                                      Container(
+                                        width: 300,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(30)),
+                                        child: TextFormField(
+                                            style: TextStyle(color: color2),
+                                            // controller: _userNameController,
+                                            cursorColor: color2,
+                                            controller: _userPassword,
+                                            obscureText: hidePassword,
+                                            decoration: InputDecoration(
+                                              hintText: 'Enter your password ',
+                                              focusedBorder: OutlineInputBorder(
+                                                  borderSide:
+                                                      BorderSide(color: color2),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30)),
+                                              border: OutlineInputBorder(
+                                                  borderSide:
+                                                      BorderSide(color: color2),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30)),
+                                              suffixIcon: IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      hidePassword =
+                                                          !hidePassword;
+                                                    });
+                                                  },
+                                                  icon: Icon(hidePassword
+                                                      ? Icons.visibility_off
+                                                      : Icons.visibility)),
+                                            ),
+                                            validator: (value) {
+                                              if (value!.isEmpty) {
+                                                return "* Required";
+                                              } else {
+                                                return null;
+                                              }
+                                            }),
+                                      ),
+                                      const SizedBox(
+                                        height: value3,
+                                      ),
+                                      Text(
+                                        "By pressing 'submit' you agree to our ",
+                                        style: TextStyle(
+                                            color: Colors.grey.shade500),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          'terms & conditions',
+                                          style: TextStyle(
+                                            decoration:
+                                                TextDecoration.underline,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
+                                ),
                               ),
                             ),
-                          ),
-                          Center(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 230.0),
-                              child: SizedBox(
-                                height: 50,
-                                width: 130,
-                                child: ElevatedButton(
-                                  onPressed: () async {
-                                    setState(() {
-                                      isLoading = false;
-                                    });
-                                    if (!formkey.currentState!.validate()) {
-                                      return;
-                                    }
-                                    await Logindata();
-                                  },
-                                  child: Text(
-                                    'LOGIN',
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400,
-                                        color: color1),
-                                  ),
-                                  style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all(gradiant1),
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(30.0),
+                            Center(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 270.0),
+                                child: SizedBox(
+                                  height: 50,
+                                  width: 130,
+                                  child: ElevatedButton(
+                                    onPressed: () async {
+                                      setState(() {
+                                        isLoading = false;
+                                      });
+                                      if (!formkey.currentState!.validate()) {
+                                        return;
+                                      }
+                                      await Logindata();
+                                    },
+                                    child: Text(
+                                      'LOGIN',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400,
+                                          color: color1),
+                                    ),
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all(gradiant1),
+                                      shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(30.0),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     )
                   ],

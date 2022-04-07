@@ -16,6 +16,7 @@ class _Paid_ApplyState extends State<Paid_Apply> {
   String dropDown = 'Enabling Video Series';
   String dropDown2 = 'Payment Type';
   String dropDown3 = 'Transaction Type';
+  String dropDown4 = 'CNIC';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -245,6 +246,42 @@ class _Paid_ApplyState extends State<Paid_Apply> {
           height: value1,
         ),
         Container(
+            decoration: BoxDecoration(
+                color: color1,
+                border: Border.all(color: Colors.grey, width: .5)),
+            child: Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15.0),
+                child: DropdownButton<String>(
+                  // ignore: unnecessary_null_comparison
+                  hint: dropDown == null
+                      ? const Text('Dropdown')
+                      : Text(
+                          dropDown4,
+                          style: const TextStyle(color: Colors.grey),
+                        ),
+                  isExpanded: true,
+                  iconSize: 20.0,
+                  style: const TextStyle(color: Colors.grey),
+                  items: ['One', 'Two', 'Three'].map(
+                    (val) {
+                      return DropdownMenuItem<String>(
+                        value: val,
+                        child: Text(val),
+                      );
+                    },
+                  ).toList(),
+                  onChanged: (val) {
+                    setState(
+                      () {
+                        dropDown4 = val.toString();
+                      },
+                    );
+                  },
+                ))),
+        const SizedBox(
+          height: value1,
+        ),
+        Container(
           height: 50,
           width: 290,
           decoration: const BoxDecoration(),
@@ -305,6 +342,32 @@ class _Paid_ApplyState extends State<Paid_Apply> {
               cursorColor: Colors.grey,
               decoration: const InputDecoration(
                 hintText: 'Email ',
+                hintStyle: TextStyle(color: Colors.grey),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey)),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey)),
+              ),
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "* Required";
+                } else {
+                  return null;
+                }
+              }),
+        ),
+        const SizedBox(
+          height: value1,
+        ),
+        Container(
+          height: 50,
+          width: 290,
+          decoration: const BoxDecoration(),
+          child: TextFormField(
+              style: const TextStyle(color: Colors.grey),
+              cursorColor: Colors.grey,
+              decoration: const InputDecoration(
+                hintText: 'Confirm email ',
                 hintStyle: TextStyle(color: Colors.grey),
                 focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey)),

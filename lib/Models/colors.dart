@@ -23,3 +23,4 @@ Color PrimaryCOlor = Colors.white;
 const double value1 = 15.0;
 const double value2 = 30.0;
 const double value3 = 10.0;
+const double value4 = 5.0;

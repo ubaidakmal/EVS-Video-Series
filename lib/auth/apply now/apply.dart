@@ -29,48 +29,50 @@ class _Apply_NowState extends State<Apply_Now> {
                     colors: [gradiant1, gradiant3, gradiant2])),
             child: Scaffold(
               backgroundColor: Colors.transparent,
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Box1(),
-                    const SizedBox(
-                      height: value1,
-                    ),
-                    Box2(),
-                    const SizedBox(
-                      height: value1,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextButton(
-                            onPressed: () {
-                              Get.to(() => const Contact_us());
-                            },
-                            child: Text(
-                              'Need Help',
-                              style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
+              body: SingleChildScrollView(
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Box1(),
+                      const SizedBox(
+                        height: value1,
+                      ),
+                      Box2(),
+                      const SizedBox(
+                        height: value1,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TextButton(
+                              onPressed: () {
+                                Get.to(() => const Contact_us());
+                              },
+                              child: Text(
+                                'Need Help',
+                                style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                    color: color1,
+                                    decoration: TextDecoration.underline),
+                              )),
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: Icon(
+                                  FontAwesomeIcons.solidQuestionCircle,
+                                  size: 17,
                                   color: color1,
-                                  decoration: TextDecoration.underline),
-                            )),
-                        Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
-                              child: Icon(
-                                FontAwesomeIcons.solidQuestionCircle,
-                                size: 17,
-                                color: color1,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             )));

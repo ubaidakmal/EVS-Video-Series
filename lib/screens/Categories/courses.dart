@@ -83,7 +83,7 @@ class _Courses_ListState extends State<Courses_List> {
                     appBar: AppBar(
                       backgroundColor: Colors.transparent,
                       title: Text(
-                        'Categories',
+                        'Courses',
                         style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
@@ -117,7 +117,7 @@ class _Courses_ListState extends State<Courses_List> {
                               Container(
                                 alignment: Alignment.center,
                                 height: 60,
-                                color: const Color(0xfff05c2f),
+
                                 // ignore: sized_box_for_whitespace
                                 child: Container(
                                   height: 50,
@@ -135,7 +135,7 @@ class _Courses_ListState extends State<Courses_List> {
                                         ),
                                       ),
                                       const SizedBox(
-                                        width: value3,
+                                        width: value4,
                                       ),
                                       SizedBox(
                                         height: 50,
@@ -211,13 +211,13 @@ class _Courses_ListState extends State<Courses_List> {
                                                   color: color1),
                                               child: Padding(
                                                 padding:
-                                                    const EdgeInsets.all(20.0),
+                                                    const EdgeInsets.all(10.0),
                                                 child: InkWell(
                                                   child: Row(
                                                     children: [
                                                       Container(
-                                                        height: 80,
-                                                        width: 80,
+                                                        height: 110,
+                                                        width: 110,
                                                         decoration:
                                                             BoxDecoration(
                                                           borderRadius:
@@ -235,44 +235,49 @@ class _Courses_ListState extends State<Courses_List> {
                                                       const SizedBox(
                                                         width: value1,
                                                       ),
-                                                      Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceEvenly,
-                                                        children: [
-                                                          SizedBox(
-                                                            width: 150,
-                                                            child: Text(
-                                                              "${_postJson[i]["CourseName"]}",
-                                                              style: TextStyle(
-                                                                  fontSize: 13,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  color:
-                                                                      color2),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                top: 15.0),
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            SizedBox(
+                                                              width: 150,
+                                                              child: Text(
+                                                                "${_postJson[i]["CourseName"]}",
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        13,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    color:
+                                                                        color2),
+                                                              ),
                                                             ),
-                                                          ),
-                                                          const SizedBox(
-                                                            height: 3,
-                                                          ),
-                                                          SizedBox(
-                                                            width: 150,
-                                                            child: Text(
-                                                              "${_postJson[i]["Description"]}",
-                                                              style: TextStyle(
-                                                                  fontSize: 11,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w300,
-                                                                  color:
-                                                                      color2),
+                                                            const SizedBox(
+                                                              height: 3,
                                                             ),
-                                                          ),
-                                                        ],
+                                                            SizedBox(
+                                                              width: 150,
+                                                              child: Text(
+                                                                "${_postJson[i]["Description"]}",
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        11,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w300,
+                                                                    color:
+                                                                        color2),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       )
                                                     ],
                                                   ),

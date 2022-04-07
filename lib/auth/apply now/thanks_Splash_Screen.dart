@@ -76,73 +76,84 @@ class _Free_Thanks_ScreenState extends State<Free_Thanks_Screen> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(bottom: 10.0),
-                              child: Divider(
-                                color: Colors.white,
-                                thickness: 1,
-                                indent: 30,
-                                endIndent: 30,
+                        Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.only(bottom: 10.0),
+                                child: Divider(
+                                  color: Colors.white,
+                                  thickness: 1,
+                                  indent: 30,
+                                  endIndent: 30,
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 35.0),
-                              child: Text(
-                                'THANK',
-                                style: TextStyle(
-                                    fontSize: 70,
-                                    fontWeight: FontWeight.bold,
-                                    color: color1),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 40.0),
-                              child: Text(
-                                'YOU',
-                                style: TextStyle(
-                                    fontSize: 70,
-                                    fontWeight: FontWeight.bold,
-                                    color: color1),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 40.0, right: 25),
-                              child: Text(
-                                'For submitting an application for free access option to enabling video series',
-                                style: TextStyle(
-                                    fontSize: 19,
-                                    fontWeight: FontWeight.w300,
-                                    color: color1),
-                              ),
-                            ),
-                            Divider(
-                              color: gradiant1,
-                              thickness: 1,
-                              indent: 70,
-                              endIndent: 70,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 10, left: 40.0, right: 20),
-                              child: DottedBorder(
-                                color: gradiant1,
-                                dashPattern: const [6, 6, 6, 6],
-                                strokeWidth: 1,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 35.0),
+                                child: Center(
                                   child: Text(
-                                    'an auto-generated email is sent to you, please check your inbox or spam folder of your email account',
-                                    style: TextStyle(color: color1),
-                                    textAlign: TextAlign.center,
+                                    'THANK',
+                                    style: TextStyle(
+                                        fontSize: 70,
+                                        fontWeight: FontWeight.bold,
+                                        color: color1),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                              Padding(
+                                padding: const EdgeInsets.only(left: 40.0),
+                                child: Center(
+                                  child: Text(
+                                    'YOU',
+                                    style: TextStyle(
+                                        fontSize: 70,
+                                        fontWeight: FontWeight.bold,
+                                        color: color1),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 40.0, right: 25),
+                                child: Center(
+                                  child: Text(
+                                    'For submitting an application for free access option to enabling video series',
+                                    style: TextStyle(
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                        color: color1),
+                                  ),
+                                ),
+                              ),
+                              Divider(
+                                color: gradiant1,
+                                thickness: 1,
+                                indent: 70,
+                                endIndent: 70,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10, left: 40.0, right: 20),
+                                child: Center(
+                                  child: DottedBorder(
+                                    color: gradiant1,
+                                    dashPattern: const [6, 6, 6, 6],
+                                    strokeWidth: 1,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'an auto-generated email is sent to you, please check your inbox or spam folder of your email account',
+                                        style: TextStyle(color: color1),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         const SizedBox(
                           height: value2,
@@ -220,24 +231,32 @@ class _Paid_Thanks_ScreenState extends State<Paid_Thanks_Screen> {
                               endIndent: 30,
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 35.0),
-                            child: Text(
-                              'THANK',
-                              style: TextStyle(
-                                  fontSize: 60,
-                                  fontWeight: FontWeight.bold,
-                                  color: color1),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 40.0),
-                            child: Text(
-                              'YOU',
-                              style: TextStyle(
-                                  fontSize: 60,
-                                  fontWeight: FontWeight.bold,
-                                  color: color1),
+                          Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 35.0),
+                                  child: Text(
+                                    'THANK',
+                                    style: TextStyle(
+                                        fontSize: 60,
+                                        fontWeight: FontWeight.bold,
+                                        color: color1),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 40.0),
+                                  child: Text(
+                                    'YOU',
+                                    style: TextStyle(
+                                        fontSize: 60,
+                                        fontWeight: FontWeight.bold,
+                                        color: color1),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           Padding(
@@ -252,25 +271,28 @@ class _Paid_Thanks_ScreenState extends State<Paid_Thanks_Screen> {
                                       fontWeight: FontWeight.w300,
                                       color: color1),
                                 ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Program-',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w300,
-                                          color: color1),
-                                    ),
-                                    Text(
-                                      'ENABLING VIDEO SERIES',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                          color: color1),
-                                    ),
-                                  ],
+                                Center(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Program-',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w300,
+                                            color: color1),
+                                      ),
+                                      Text(
+                                        'ENABLING VIDEO SERIES',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            color: color1),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                                 Divider(
                                   color: gradiant1,
@@ -303,24 +325,26 @@ class _Paid_Thanks_ScreenState extends State<Paid_Thanks_Screen> {
                           Padding(
                             padding: const EdgeInsets.only(
                                 top: 10, left: 40.0, right: 20),
-                            child: DottedBorder(
-                              color: gradiant1,
-                              dashPattern: const [6, 6, 6, 6],
-                              strokeWidth: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 10.0,
-                                    left: 30.0,
-                                    right: 30.0,
-                                    bottom: 10),
-                                child: Text(
-                                  'EVS-02-22-40829',
-                                  style: TextStyle(
-                                      color: color1,
-                                      fontSize: 25,
-                                      letterSpacing: 2,
-                                      fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.center,
+                            child: Center(
+                              child: DottedBorder(
+                                color: gradiant1,
+                                dashPattern: const [6, 6, 6, 6],
+                                strokeWidth: 1,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 10.0,
+                                      left: 30.0,
+                                      right: 30.0,
+                                      bottom: 10),
+                                  child: Text(
+                                    'EVS-02-22-40829',
+                                    style: TextStyle(
+                                        color: color1,
+                                        fontSize: 25,
+                                        letterSpacing: 2,
+                                        fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
                               ),
                             ),
@@ -331,46 +355,51 @@ class _Paid_Thanks_ScreenState extends State<Paid_Thanks_Screen> {
                           Padding(
                             padding:
                                 const EdgeInsets.only(left: 40.0, right: 20),
-                            child: Text(
-                              "Note if you don't find email in your inbox, check yoour spam or junk folder or you can rise the concern through",
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: color1),
-                              textAlign: TextAlign.center,
+                            child: Center(
+                              child: Text(
+                                "Note if you don't find email in your inbox, check yoour spam or junk folder or you can rise the concern through",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: color1),
+                                textAlign: TextAlign.center,
+                              ),
                             ),
                           ),
                           const SizedBox(
                             height: value1,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              TextButton(
-                                  onPressed: () {
-                                    Get.to(() => const Contact_Support());
-                                  },
-                                  child: Text(
-                                    'Support',
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold,
+                          Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                TextButton(
+                                    onPressed: () {
+                                      Get.to(() => const Contact_Support());
+                                    },
+                                    child: Text(
+                                      'Support',
+                                      style: TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold,
+                                          color: color1,
+                                          decoration: TextDecoration.underline),
+                                    )),
+                                Column(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 8.0),
+                                      child: Icon(
+                                        FontAwesomeIcons.solidQuestionCircle,
+                                        size: 17,
                                         color: color1,
-                                        decoration: TextDecoration.underline),
-                                  )),
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Icon(
-                                      FontAwesomeIcons.solidQuestionCircle,
-                                      size: 17,
-                                      color: color1,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),

@@ -107,7 +107,7 @@ class _CategoriesState extends State<Categories> {
                                       Container(
                                         alignment: Alignment.center,
                                         height: 60,
-                                        color: const Color(0xfff05c2f),
+
                                         // ignore: sized_box_for_whitespace
                                         child: Container(
                                           height: 50,
@@ -118,15 +118,19 @@ class _CategoriesState extends State<Categories> {
                                                   BorderRadius.circular(30)),
                                           child: Row(
                                             children: [
-                                              IconButton(
-                                                onPressed: () {},
-                                                icon: Icon(
-                                                  FontAwesomeIcons.search,
-                                                  color: Colors.grey.shade400,
+                                              SizedBox(
+                                                width: 30,
+                                                child: IconButton(
+                                                  onPressed: () {},
+                                                  icon: Icon(
+                                                    FontAwesomeIcons.search,
+                                                    color: Colors.grey.shade400,
+                                                    size: 20,
+                                                  ),
                                                 ),
                                               ),
                                               const SizedBox(
-                                                width: value3,
+                                                width: value4,
                                               ),
                                               SizedBox(
                                                 height: 50,

@@ -52,92 +52,94 @@ class Drawer_Menu extends StatelessWidget {
             ),
             body: Padding(
               padding: const EdgeInsets.only(top: 30.0, left: 30, right: 30),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(
-                    FontAwesomeIcons.userAlt,
-                    size: 40,
-                    color: color1,
-                  ),
-                  const SizedBox(height: value1),
-                  Text('Ubaid Akmal',
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: color1)),
-                  Text('email@enablers.org',
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                          color: color1)),
-                  const SizedBox(height: value2),
-                  SizedBox(
-                    height: 500,
-                    width: double.infinity,
-                    child: ListView(
-                      children: [
-                        ListTile(
-                          leading: IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                FontAwesomeIcons.table,
-                                size: 19,
-                                color: color1,
-                              )),
-                          title: Text(
-                            'Dashboard',
-                            style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w400,
-                                color: color1),
-                          ),
-                          onTap: () {},
-                        ),
-                        ListTile(
-                          leading: IconButton(
-                              onPressed: () {
-                                Get.to(() => const Categories());
-                              },
-                              icon: Icon(
-                                FontAwesomeIcons.listAlt,
-                                size: 19,
-                                color: color1,
-                              )),
-                          title: Text(
-                            'Categories',
-                            style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w400,
-                                color: color1),
-                          ),
-                          onTap: () {
-                            Get.to(() => const Categories());
-                          },
-                        ),
-                        ListTile(
-                          leading: IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                FontAwesomeIcons.solidQuestionCircle,
-                                size: 19,
-                                color: color1,
-                              )),
-                          title: Text(
-                            'Need Help',
-                            style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w400,
-                                color: color1),
-                          ),
-                          onTap: () {
-                            Get.to(() => const Contact_us());
-                          },
-                        ),
-                      ],
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(
+                      FontAwesomeIcons.userAlt,
+                      size: 40,
+                      color: color1,
                     ),
-                  )
-                ],
+                    const SizedBox(height: value1),
+                    Text('Ubaid Akmal',
+                        style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: color1)),
+                    Text('email@enablers.org',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w300,
+                            color: color1)),
+                    const SizedBox(height: value2),
+                    SizedBox(
+                      height: 500,
+                      width: double.infinity,
+                      child: ListView(
+                        children: [
+                          ListTile(
+                            leading: IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  FontAwesomeIcons.table,
+                                  size: 19,
+                                  color: color1,
+                                )),
+                            title: Text(
+                              'Dashboard',
+                              style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w400,
+                                  color: color1),
+                            ),
+                            onTap: () {},
+                          ),
+                          ListTile(
+                            leading: IconButton(
+                                onPressed: () {
+                                  Get.to(() => const Categories());
+                                },
+                                icon: Icon(
+                                  FontAwesomeIcons.listAlt,
+                                  size: 19,
+                                  color: color1,
+                                )),
+                            title: Text(
+                              'Categories',
+                              style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w400,
+                                  color: color1),
+                            ),
+                            onTap: () {
+                              Get.to(() => const Categories());
+                            },
+                          ),
+                          ListTile(
+                            leading: IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  FontAwesomeIcons.solidQuestionCircle,
+                                  size: 19,
+                                  color: color1,
+                                )),
+                            title: Text(
+                              'Need Help',
+                              style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w400,
+                                  color: color1),
+                            ),
+                            onTap: () {
+                              Get.to(() => const Contact_us());
+                            },
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           )),

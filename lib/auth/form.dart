@@ -30,158 +30,161 @@ class _Form_MenuState extends State<Form_Menu> {
                     colors: [gradiant1, gradiant3, gradiant2])),
             child: Scaffold(
               backgroundColor: Colors.transparent,
-              body: Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 130.0, bottom: 60.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                              height: 120,
-                              width: 120,
-                              child: Image(
-                                image: AssetImage('images/enablers-logo.1.png'),
-                                fit: BoxFit.cover,
-                              )),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                "enablers",
-                                style: TextStyle(
-                                    fontSize: 50,
-                                    fontWeight: FontWeight.bold,
-                                    color: color1),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 8.0),
-                                child: Text(
-                                  ".ORG",
+              body: SingleChildScrollView(
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 130.0, bottom: 60.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(
+                                height: 120,
+                                width: 120,
+                                child: Image(
+                                  image:
+                                      AssetImage('images/enablers-logo.1.png'),
+                                  fit: BoxFit.cover,
+                                )),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  "enablers",
                                   style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 50,
                                       fontWeight: FontWeight.bold,
                                       color: color1),
                                 ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: value2,
-                          ),
-                          InkWell(
-                            child: Container(
-                              height: 40,
-                              width: 250,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  border: Border.all(
-                                      color: color1,
-                                      width: .5,
-                                      style: BorderStyle.solid)),
-                              child: Center(
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 8.0),
                                   child: Text(
-                                'APPLY NOW',
-                                style: TextStyle(
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w700,
-                                    color: color1),
-                              )),
-                            ),
-                            onTap: () {
-                              Get.to(() => const Apply_Now());
-                            },
-                          ),
-                          const SizedBox(
-                            height: value1,
-                          ),
-                          InkWell(
-                            child: Container(
-                              height: 40,
-                              width: 250,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  border: Border.all(
-                                      color: color1,
-                                      width: .5,
-                                      style: BorderStyle.solid)),
-                              child: Center(
-                                  child: Text(
-                                'APPLICATION STATUS',
-                                style: TextStyle(
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w700,
-                                    color: color1),
-                              )),
-                            ),
-                            onTap: () {
-                              Get.to(() => const Free_Apply_Email());
-                            },
-                          ),
-                          const SizedBox(
-                            height: value1,
-                          ),
-                          InkWell(
-                            child: Container(
-                              height: 40,
-                              width: 250,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  border: Border.all(
-                                      color: color1,
-                                      width: .5,
-                                      style: BorderStyle.solid)),
-                              child: Center(
-                                  child: Text(
-                                'LOGIN',
-                                style: TextStyle(
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w700,
-                                    color: color1),
-                              )),
-                            ),
-                            onTap: () {
-                              Get.to(() => const Login_Screen());
-                            },
-                          ),
-                          const SizedBox(
-                            height: value1,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          TextButton(
-                              onPressed: () {
-                                Get.to(() => const Contact_us());
-                              },
-                              child: Text(
-                                'Need Help',
-                                style: TextStyle(
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.bold,
-                                    color: color1,
-                                    decoration: TextDecoration.underline),
-                              )),
-                          Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 8.0),
-                                child: Icon(
-                                  FontAwesomeIcons.solidQuestionCircle,
-                                  size: 17,
-                                  color: color1,
+                                    ".ORG",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                        color: color1),
+                                  ),
                                 ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: value2,
+                            ),
+                            InkWell(
+                              child: Container(
+                                height: 40,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: color1,
+                                        width: .5,
+                                        style: BorderStyle.solid)),
+                                child: Center(
+                                    child: Text(
+                                  'APPLY NOW',
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w700,
+                                      color: color1),
+                                )),
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
+                              onTap: () {
+                                Get.to(() => const Apply_Now());
+                              },
+                            ),
+                            const SizedBox(
+                              height: value1,
+                            ),
+                            InkWell(
+                              child: Container(
+                                height: 40,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: color1,
+                                        width: .5,
+                                        style: BorderStyle.solid)),
+                                child: Center(
+                                    child: Text(
+                                  'APPLICATION STATUS',
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w700,
+                                      color: color1),
+                                )),
+                              ),
+                              onTap: () {
+                                Get.to(() => const Free_Apply_Email());
+                              },
+                            ),
+                            const SizedBox(
+                              height: value1,
+                            ),
+                            InkWell(
+                              child: Container(
+                                height: 40,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: color1,
+                                        width: .5,
+                                        style: BorderStyle.solid)),
+                                child: Center(
+                                    child: Text(
+                                  'LOGIN',
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w700,
+                                      color: color1),
+                                )),
+                              ),
+                              onTap: () {
+                                Get.to(() => const Login_Screen());
+                              },
+                            ),
+                            const SizedBox(
+                              height: value1,
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            TextButton(
+                                onPressed: () {
+                                  Get.to(() => const Contact_us());
+                                },
+                                child: Text(
+                                  'Need Help',
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
+                                      color: color1,
+                                      decoration: TextDecoration.underline),
+                                )),
+                            Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 8.0),
+                                  child: Icon(
+                                    FontAwesomeIcons.solidQuestionCircle,
+                                    size: 17,
+                                    color: color1,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
